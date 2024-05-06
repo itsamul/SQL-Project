@@ -21,5 +21,8 @@ Arimoro Olayinka Imisioluwa
 ### Skills:
 Database Manipulation, Database management, Database Querying
 
+### Queries:
+Querying_Databases_Using_SQL_SELECT_Statement.sql 
+
 ### verification link:
 Coursera verification link https://www.coursera.org/account/accomplishments/verify/8VM2NJ4H3WUW
