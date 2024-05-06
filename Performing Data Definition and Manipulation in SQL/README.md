@@ -6,8 +6,8 @@ This is a project-based course by coursera on **Performing Data Definition and M
 Arimoro Olayinka Imisioluwa
 
 ### Course Objectives
-1. Using SQL data definition statements for various data definition tasks such as creating a database, tables, and Inserting values.
-2. Using SQL data manipulation statements for various data manipulation tasks such as Alter, rename, update data, Drop Vs. Truncate Vs. Delete
+1. Using SQL data definition statements for various data definition tasks such as **creating a database, tables,** and **Inserting values**.
+2. Using SQL data manipulation statements for various data manipulation tasks such as **Alter**, **rename**, **update data**, **Drop Vs. Truncate Vs. Delete**.
 
 ### Technologies & Tools:
 1. SQL
