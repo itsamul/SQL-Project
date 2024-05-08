@@ -4,7 +4,6 @@
 ###############################################################
 ###############################################################
 
-
 #############################
 -- Task One: Getting Started
 -- In this task, we will retrieve data from the tables in the
@@ -19,6 +18,7 @@ SELECT * FROM dept_manager;
 SELECT * FROM salaries;
 SELECT * FROM customers;
 SELECT * FROM sales;
+
 
 #############################
 -- Task Two: Subquery in the WHERE clause
@@ -79,7 +79,6 @@ WHERE emp_no IN(
 	FROM employees
 	WHERE hire_date BETWEEN '1990-01-01' AND '1995-01-01'
 );
-
 
 
 #############################
@@ -207,24 +206,21 @@ SELECT emp_no, salary FROM salaries
 WHERE salary > 120000;
 
 -- Solution
-
 SELECT * 
 FROM employees
-
-
 
 -- Alternative Solution
 SELECT emp_no, salary FROM salaries
 WHERE salary > 120000
 AND emp_no IN (SELECT emp_no FROM dept_emp
-				WHERE dept_no IN ('d002','d003'));
+	WHERE dept_no IN ('d002','d003'));
 
 -- Exercise 5.5: Retrieve the average salary of these employees
 SELECT emp_no, ROUND(AVG(salary),2) AS average_salary
 FROM salaries
 WHERE salary > 120000
 AND emp_no IN (SELECT emp_no FROM dept_emp
-				WHERE dept_no IN ('d002','d003'))
+	WHERE dept_no IN ('d002','d003'))
 GROUP BY emp_no
 ORDER BY average_salary DESC;
 
