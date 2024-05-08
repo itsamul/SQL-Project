@@ -273,6 +273,5 @@ FROM departments_dup
 ORDER BY dept_no;
 
 -- 9.4: Replace a missing country with the city, state or No Address
-SELECT * FROM customers;
 SELECT customer_id, customer_name, country, city, state, COALESCE(country, city, state, 'No Address') AS address
 FROM customers;
