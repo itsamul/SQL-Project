@@ -14,31 +14,31 @@
 -- 1.1: Create the customers table
 CREATE TABLE customers
 (
-    Customer_ID CHAR(8) PRIMARY KEY,
+	Customer_ID CHAR(8) PRIMARY KEY,
 	Bracket_cust_id CHAR(10),
-    Customer_Name VARCHAR(255),
-    Segment VARCHAR(255),
-    Age INT,
+	Customer_Name VARCHAR(255),
+	Segment VARCHAR(255),
+	Age INT,
 	Country VARCHAR(255),
 	City VARCHAR(255),
 	State VARCHAR(255),
-    Postal_Code INT,
+	Postal_Code INT,
 	Region VARCHAR(255)
 );
 
 -- 1.2: Create the sales table
 CREATE TABLE sales
 (
-    Order_line INT,
+	Order_line INT,
 	Order_ID VARCHAR(255),
 	Order_Date DATE,
 	Ship_Date DATE,
-    Ship_Mode VARCHAR(255),
-    Customer_ID CHAR(8),
+	Ship_Mode VARCHAR(255),
+	Customer_ID CHAR(8),
 	Product_ID VARCHAR(255),
 	Sales DECIMAL(10,5),
 	Quantity INT,
-    Discount DECIMAL(4,2),
+	Discount DECIMAL(4,2),
 	Profit DECIMAL(10,5)
 );
 
@@ -59,7 +59,8 @@ FROM sales;
 #############################
 
 -- 2.1: Retrieve data from the employees table
-SELECT * FROM employees;
+SELECT * 
+FROM employees;
 
 -- 2.2: Find the length of the first name of male employees
 SELECT first_name, LENGTH(first_name) AS length_first_name
@@ -133,7 +134,8 @@ SELECT first_name, last_name, gender, REPLACE(gender, 'F', 'Female') AS emp_gend
 FROM employees;
 
 -- 4.3: Retrieve data from the customers table
-SELECT * FROM customers;
+SELECT * 
+FROM customers;
 
 -- 4.4: Change United States to US in the country column of the customers table
 SELECT customer_name, region, country, REPLACE(Lower(country), 'united states', 'US') AS country_changed
@@ -199,7 +201,8 @@ FROM customers;
 #############################
 
 -- 7.1: Retrieve data from the customers table
-SELECT * FROM customers;
+SELECT * 
+FROM customers;
 
 -- 7.2: Retrieve the IDs, names, and groups of customers
 -- Hint: Use the customer_id column
@@ -227,7 +230,8 @@ FROM employees;
 #############################
 
 -- 8.1: Retrieve data from the dept_emp table
-SELECT * FROM dept_emp;
+SELECT * 
+FROM dept_emp;
 
 -- 8.2: Retrieve a list of all department numbers for different employees
 SELECT emp_no, STRING_AGG(dept_no, ', ') AS departments
@@ -235,7 +239,8 @@ FROM dept_emp
 GROUP BY emp_no;
 
 -- 8.3: Retrieve data from the sales table
-SELECT * FROM sales;
+SELECT * 
+FROM sales;
 
 -- 8.4: Retrieve a list of all products that were ordered by a customer from the sales table
 SELECT order_id, STRING_AGG(product_id, ', ') AS products_ordered
@@ -251,7 +256,8 @@ ORDER BY order_id;
 #############################
 
 -- 9.1: Retrieve data from the departments_dup table
-SELECT * FROM departments_dup;
+SELECT * 
+FROM departments_dup;
 
 -- 9.2: Replace all missing department number with its department name
 SELECT dept_no, dept_name, COALESCE(dept_no, dept_name) AS dept
@@ -270,7 +276,3 @@ ORDER BY dept_no;
 SELECT * FROM customers;
 SELECT customer_id, customer_name, country, city, state, COALESCE(country, city, state, 'No Address') AS address
 FROM customers;
-
-
-
-
