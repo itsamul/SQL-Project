@@ -17,9 +17,9 @@ Arimoro Olayinka Imisioluwa
 Data Manipulation, Data Cleansing, String Functions
 
 ### Question & Solution (Queries):
-[Using-SQL-String-Functions-to-Clean-Data.sql]
+[Using-SQL-String-Functions-to-Clean-Data.sql](https://github.com/itsamul/SQL-Project/blob/main/Using%20SQL%20String%20Functions%20to%20Clean%20Data/Using-SQL-String-Functions-to-Clean-Data.sql)
 
 ### verification link:
 Coursera verification link https://www.coursera.org/account/accomplishments/verify/QU36QXLTLY7E
-<br>[Download Certificate]
-<br>![Certificate_Image]
+<br>[Download Certificate](https://github.com/itsamul/SQL-Project/blob/main/Using%20SQL%20String%20Functions%20to%20Clean%20Data/Coursera%20QU36QXLTLY7E.pdf)
+<br>![Certificate_Image](https://github.com/itsamul/SQL-Project/assets/85364800/95e44985-2c1c-449d-a1eb-1a0cb69fcf07)
