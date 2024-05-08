@@ -169,15 +169,15 @@ SELECT * FROM departments;
 SELECT *
 FROM dept_emp
 WHERE dept_no IN (SELECT dept_no 
-				  FROM departments 
-				  WHERE dept_name = 'Customer Service')
+		FROM departments 
+		WHERE dept_name = 'Customer Service')
 
 -- Exercise 5.2: Include the employee number, first and last names
 SELECT dep.emp_no, dep.dept_no, first_name, last_name
 FROM dept_emp AS dep, employees AS emp
 WHERE dept_no IN (SELECT dept_no 
-				  FROM departments 
-				  WHERE dept_name = 'Customer Service')
+		FROM departments 
+		WHERE dept_name = 'Customer Service')
 	AND dep.emp_no = emp.emp_no
 ORDER BY dep.emp_no ASC;
 
@@ -193,11 +193,11 @@ WHERE from_date > '1985-01-01';
 SELECT * 
 FROM dept_manager
 WHERE emp_no IN (SELECT emp_no 
-				  FROM dept_manager
-				  WHERE from_date > '1985-01-01') 
+		FROM dept_manager
+		WHERE from_date > '1985-01-01') 
 	AND dept_no IN (SELECT dept_no 
-					FROM departments 
-					WHERE dept_name IN('Finance', 'Human Resources'));
+		FROM departments 
+		WHERE dept_name IN('Finance', 'Human Resources'));
 
 -- Exercise 5.4: Retrieve a list of all employees that earn above 120,000
 -- and are in the Finance or HR departments
@@ -286,9 +286,9 @@ SELECT e.emp_no, e.first_name, e.last_name, a.emp_max_salary,
 (SELECT MAX(salary) max_salary FROM salaries) - a.emp_max_salary salary_diff
 FROM employees e
 JOIN (SELECT s.emp_no, MAX(salary) AS emp_max_salary
-				   FROM salaries s
-				   GROUP BY s.emp_no
-				   ORDER BY s.emp_no) a
+	FROM salaries s
+	GROUP BY s.emp_no
+	ORDER BY s.emp_no) a
 ON e.emp_no = a.emp_no
 WHERE e.emp_no IN (SELECT emp_no FROM dept_emp WHERE dept_no IN ('d002', 'd003'))
 ORDER BY emp_no;
@@ -327,9 +327,9 @@ FROM salaries
 SELECT ROUND(AVG(salary), 2) avg_salary
 FROM salaries
 WHERE salary NOT IN ((SELECT ROUND(MAX(salary), 2)
-					 FROM salaries),
-					 (SELECT ROUND(MIN(salary), 2)
-					 FROM salaries)
+	FROM salaries),
+	(SELECT ROUND(MIN(salary), 2)
+	FROM salaries)
 )
 
 -- Exercise 7.3: Retrieve a list of customers id, name that has
@@ -344,17 +344,17 @@ ORDER BY cust_count DESC;
 -- Solution
 SELECT cus.customer_id, cus.customer_name, sal.cust_count
 FROM customers AS cus, (SELECT customer_id, COUNT(*) AS cust_count, SUM(sales) total_sales
-						 FROM sales
-						 GROUP BY customer_id
-						 ORDER BY total_sales DESC, cust_count DESC) as sal
+	FROM sales
+	GROUP BY customer_id
+	ORDER BY total_sales DESC, cust_count DESC) as sal
 WHERE cus.customer_id = sal.customer_id
 ORDER BY sal.cust_count DESC;
 
 SELECT cus.customer_id, cus.customer_name, sal.cust_count
 FROM customers AS cus, (SELECT customer_id, COUNT(*) AS cust_count, SUM(sales) total_sales
-						 FROM sales
-						 GROUP BY customer_id
-						 ORDER BY total_sales DESC, cust_count DESC) as sal
+	FROM sales
+	GROUP BY customer_id
+	ORDER BY total_sales DESC, cust_count DESC) as sal
 WHERE cus.customer_id = sal.customer_id
 ORDER BY sal.cust_count DESC
 LIMIT 5;
@@ -372,9 +372,9 @@ ORDER BY total_sales DESC, cust_count DESC;
 -- Solution
 SELECT cus.customer_id, cus.customer_name, cus.segment, sal.cust_count, sal.total_sales
 FROM customers AS cus, (SELECT customer_id, COUNT(*) AS cust_count, SUM(sales) total_sales
-						 FROM sales
-						 GROUP BY customer_id
-						 ORDER BY total_sales DESC, cust_count DESC) as sal
+	FROM sales
+	GROUP BY customer_id
+	ORDER BY total_sales DESC, cust_count DESC) as sal
 WHERE cus.customer_id = sal.customer_id
 ORDER BY sal.total_sales DESC, sal.cust_count DESC
 LIMIT 5;
